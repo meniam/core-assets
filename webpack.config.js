@@ -81,6 +81,7 @@ Encore
 
     .addEntry('js/shared/markdown', './assets/js/_shared/markdown.js')
     .addStyleEntry('css/shared/markdown', './assets/scss/_shared/markdown.scss')
+    .addStyleEntry('css/shared/select2', './assets/scss/_shared/select2.scss')
 
 
     .addPlugin(new TerserPlugin({

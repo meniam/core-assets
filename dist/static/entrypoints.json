@@ -19,6 +19,11 @@
       "css": [
         "/static/css/shared/markdown.css"
       ]
+    },
+    "css/shared/select2": {
+      "css": [
+        "/static/css/shared/select2.css"
+      ]
     }
   }
 }
