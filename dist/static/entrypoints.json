@@ -1,0 +1,24 @@
+{
+  "entrypoints": {
+    "js/shared/codemirror": {
+      "js": [
+        "/static/js/shared/codemirror.js"
+      ]
+    },
+    "js/shared/markdown": {
+      "js": [
+        "/static/js/shared/markdown.js"
+      ]
+    },
+    "css/shared/codemirror": {
+      "css": [
+        "/static/css/shared/codemirror.css"
+      ]
+    },
+    "css/shared/markdown": {
+      "css": [
+        "/static/css/shared/markdown.css"
+      ]
+    }
+  }
+}

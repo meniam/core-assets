@@ -1,0 +1,14 @@
+@import "../../../node_modules/codemirror/lib/codemirror.css";
+@import "../../../node_modules/codemirror/theme/idea.css";
+@import "../../../node_modules/codemirror/addon/dialog/dialog.css";
+@import "../../../node_modules/codemirror/addon/hint/show-hint.css";
+@import "../../../node_modules/codemirror/addon/lint/lint.css";
+@import "../../../node_modules/codemirror/addon/fold/foldgutter.css";
+@import "../../../node_modules/codemirror/addon/search/matchesonscrollbar.css";
+
+.CodeMirror {
+  border: 1px solid #e5e5e5;
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  height: auto;
+}

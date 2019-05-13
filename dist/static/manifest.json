@@ -1,0 +1,6 @@
+{
+  "static/css/shared/codemirror.css": "/static/css/shared/codemirror.css",
+  "static/css/shared/markdown.css": "/static/css/shared/markdown.css",
+  "static/js/shared/codemirror.js": "/static/js/shared/codemirror.js",
+  "static/js/shared/markdown.js": "/static/js/shared/markdown.js"
+}
