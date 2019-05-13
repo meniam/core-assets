@@ -56,15 +56,13 @@ Encore
     .enableSassLoader(function(sassOptions) {}, {
         resolveUrlLoader: false
     })
-    // .addPlugin(
-    //     new CopyWebpackPlugin(
-    //         [
-    //             { from: 'assets/img', to: 'img' },
-    //             { from: 'assets/fonts', to: 'fonts' },
-    //             { from: 'node_modules/@fortawesome/fontawesome-pro/webfonts', to: 'fonts' },
-    //         ]
-    //     )
-    // )
+    .addPlugin(
+        new CopyWebpackPlugin(
+            [
+                { from: 'assets/fonts', to: 'fonts' }
+            ]
+        )
+    )
     .addPlugin(new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/i,
             cssProcessor: require('cssnano'),

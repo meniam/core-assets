@@ -2,5 +2,20 @@
   "static/css/shared/codemirror.css": "/static/css/shared/codemirror.css",
   "static/css/shared/markdown.css": "/static/css/shared/markdown.css",
   "static/js/shared/codemirror.js": "/static/js/shared/codemirror.js",
-  "static/js/shared/markdown.js": "/static/js/shared/markdown.js"
+  "static/js/shared/markdown.js": "/static/js/shared/markdown.js",
+  "static/fonts/Arial Narrow.ttf": "/static/fonts/Arial Narrow.ttf",
+  "static/fonts/Georgia.ttf": "/static/fonts/Georgia.ttf",
+  "static/fonts/Tahoma.ttf": "/static/fonts/Tahoma.ttf",
+  "static/fonts/Trebuchet MS.ttf": "/static/fonts/Trebuchet MS.ttf",
+  "static/fonts/firacode/TypoPRO-FiraCode-Bold.eot": "/static/fonts/firacode/TypoPRO-FiraCode-Bold.eot",
+  "static/fonts/firacode/TypoPRO-FiraCode-Bold.ttf": "/static/fonts/firacode/TypoPRO-FiraCode-Bold.ttf",
+  "static/fonts/firacode/TypoPRO-FiraCode-Bold.woff": "/static/fonts/firacode/TypoPRO-FiraCode-Bold.woff",
+  "static/fonts/firacode/TypoPRO-FiraCode-Medium.css": "/static/fonts/firacode/TypoPRO-FiraCode-Medium.css",
+  "static/fonts/firacode/TypoPRO-FiraCode-Medium.eot": "/static/fonts/firacode/TypoPRO-FiraCode-Medium.eot",
+  "static/fonts/firacode/TypoPRO-FiraCode-Medium.ttf": "/static/fonts/firacode/TypoPRO-FiraCode-Medium.ttf",
+  "static/fonts/firacode/TypoPRO-FiraCode-Medium.woff": "/static/fonts/firacode/TypoPRO-FiraCode-Medium.woff",
+  "static/fonts/firacode/TypoPRO-FiraCode-Regular.css": "/static/fonts/firacode/TypoPRO-FiraCode-Regular.css",
+  "static/fonts/firacode/TypoPRO-FiraCode-Regular.eot": "/static/fonts/firacode/TypoPRO-FiraCode-Regular.eot",
+  "static/fonts/firacode/TypoPRO-FiraCode-Regular.ttf": "/static/fonts/firacode/TypoPRO-FiraCode-Regular.ttf",
+  "static/fonts/firacode/TypoPRO-FiraCode-Regular.woff": "/static/fonts/firacode/TypoPRO-FiraCode-Regular.woff"
 }
