@@ -1,0 +1,9 @@
+@function calculateRem($size, $font-size-base: $font-size-base) {
+  $remSize: $size/16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}

@@ -1,0 +1,26 @@
+@mixin columns($count, $gap: 0) {
+    columns: $count;
+    -webkit-columns: $count;
+    -moz-columns: $count;
+    -o-columns: $count;
+    -ms-columns: $count;
+    column-count: $count;
+
+    column-gap: $gap;
+    -webkit-column-gap: $gap;
+    -moz-column-gap: $gap;
+    -o-column-gap: $count;
+    -ms-column-gap: $count;
+}
+
+@mixin columns4($gap: 0) {
+    @include media-breakpoint-down(sm) {
+        @include columns(2, $gap);
+    }
+    @include media-breakpoint-only(md) {
+        @include columns(3, $gap);
+    }
+    @include media-breakpoint-up(lg) {
+        @include columns(4, $gap);
+    }
+}
