@@ -1,35 +1,10 @@
 const Encore = require('@symfony/webpack-encore');
 
-const webpack = require('webpack');
 const path = require('path');
-const glob = require('glob');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const FontAwesomeMinifyPlugin = require("font-awesome-minify-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
-
-const PATHS = {
-    templates: path.join(__dirname, 'templates'),
-    frontend: path.join(__dirname, 'templates/frontend'),
-    backend: path.join(__dirname, 'templates/backend'),
-    form: path.join(__dirname, 'templates/shared/form')
-};
-
-function collectWhitelist() {
-    // do something to collect the whitelist
-    return ['page'];
-}
-function collectWhitelistPatterns() {
-    // do something to collect the whitelist
-    return [/^(page|dropdown)/];
-}
-
-function collectWhitelistPatternsChildren() {
-    // do something to collect the whitelist
-    return [/^(page|dropdown|input-|autocomplete|modal|super|button|d-|col-|form-)/];
-}
 
 Encore
     .configureRuntimeEnvironment('dev')
@@ -72,18 +47,6 @@ Encore
             canPrint: true
         })
     )
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Shared
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    .addEntry('js/shared/codemirror', './assets/js/_shared/codemirror.js')
-    .addStyleEntry('css/shared/codemirror', './assets/scss/_shared/codemirror.scss')
-
-    .addEntry('js/shared/markdown', './assets/js/_shared/markdown.js')
-    .addStyleEntry('css/shared/markdown', './assets/scss/_shared/markdown.scss')
-    .addStyleEntry('css/shared/select2', './assets/scss/_shared/select2.scss')
-
-
     .addPlugin(new TerserPlugin({
             test: /\.js(\?.*)?$/i,
             parallel: true,
@@ -92,6 +55,18 @@ Encore
             terserOptions: { output: {comments: false} }
         })
     )
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Shared
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    .addEntry('js/shared/codemirror', './assets/js/_shared/codemirror.js')
+    .addEntry('js/shared/fancybox', './assets/js/_shared/fancybox.js')
+
+    .addStyleEntry('css/shared/codemirror', './assets/scss/_shared/codemirror.scss')
+    .addStyleEntry('css/shared/markdown', './assets/scss/_shared/markdown.scss')
+    .addStyleEntry('css/shared/select2', './assets/scss/_shared/select2.scss')
+    .addStyleEntry('css/shared/selectize', './assets/scss/_shared/selectize.scss')
+    .addStyleEntry('css/shared/fancybox', './assets/scss/_shared/fancybox.scss')
 ;
 
 var config = Encore.getWebpackConfig();

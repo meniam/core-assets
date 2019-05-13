@@ -1,9 +1,7 @@
-//import './../../scss/backend/vendor_codemirror.scss';
 import CodeMirror from 'codemirror';
 window['CodeMirror'] = CodeMirror;
 
-
-import jsonlint from './vendor/jsonlint';
+import jsonlint from './jsonlint';
 window.jsonlint = jsonlint;
 
 import jsyaml from 'js-yaml/dist/js-yaml.min';

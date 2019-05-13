@@ -1,2 +1,9 @@
 @import "~select2/dist/css/select2.min.css";
 @import "select2-theme/layout";
+
+.loading-results {
+  position: absolute;
+  left:-1000;
+  display: none;
+}
+

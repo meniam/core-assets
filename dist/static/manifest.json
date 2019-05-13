@@ -1,9 +1,11 @@
 {
   "static/css/shared/codemirror.css": "/static/css/shared/codemirror.css",
+  "static/css/shared/fancybox.css": "/static/css/shared/fancybox.css",
   "static/css/shared/markdown.css": "/static/css/shared/markdown.css",
   "static/css/shared/select2.css": "/static/css/shared/select2.css",
+  "static/css/shared/selectize.css": "/static/css/shared/selectize.css",
   "static/js/shared/codemirror.js": "/static/js/shared/codemirror.js",
-  "static/js/shared/markdown.js": "/static/js/shared/markdown.js",
+  "static/js/shared/fancybox.js": "/static/js/shared/fancybox.js",
   "static/fonts/Arial Narrow.ttf": "/static/fonts/Arial Narrow.ttf",
   "static/fonts/Georgia.ttf": "/static/fonts/Georgia.ttf",
   "static/fonts/Tahoma.ttf": "/static/fonts/Tahoma.ttf",
