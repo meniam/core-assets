@@ -22,6 +22,11 @@ Encore
         'window.$': 'jquery',
         Popper: 'popper.js'
     })
+    .addRule({
+        parser: {
+            amd: false,
+        },
+    })
     .configureFilenames({
         js: '[name].js',
         css: '[name].css',

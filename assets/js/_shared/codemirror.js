@@ -38,4 +38,6 @@ require('codemirror/addon/lint/json-lint');
 require('codemirror/addon/lint/css-lint');
 require('codemirror/addon/lint/yaml-lint');
 
-export default CodeMirror;
+window.CodeMirror = CodeMirror;
+global.CodeMirror = CodeMirror;
+
