@@ -12,6 +12,7 @@ require('codemirror/mode/htmlmixed/htmlmixed');
 require('codemirror/mode/yaml-frontmatter/yaml-frontmatter');
 require('codemirror/mode/yaml/yaml');
 require('codemirror/mode/css/css');
+require('codemirror/mode/sql/sql');
 require('codemirror/addon/dialog/dialog');
 require('codemirror/addon/fold/comment-fold');
 require('codemirror/addon/fold/foldgutter');
