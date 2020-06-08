@@ -10,6 +10,11 @@
         "/static/js/shared/fancybox.js"
       ]
     },
+    "js/shared/markdown": {
+      "js": [
+        "/static/js/shared/markdown.js"
+      ]
+    },
     "css/shared/codemirror": {
       "css": [
         "/static/css/shared/codemirror.css"

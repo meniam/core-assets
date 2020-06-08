@@ -12,3 +12,9 @@ npm i
 ```
 npm publish --access public .
 ```
+
+Удалено
+```
+    "popper": "^1.0.1",
+
+```

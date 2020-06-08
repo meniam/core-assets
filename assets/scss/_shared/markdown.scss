@@ -1,1 +1,11 @@
 @import "../../../node_modules/simplemde/dist/simplemde.min.css";
+.editor-toolbar, .CodeMirror {
+  border-radius: 0;
+  border-color: #dee2e6;
+}
+
+
+.CodeMirror-lines {
+  font-size: 1.2rem;
+  line-height:1.4;
+}

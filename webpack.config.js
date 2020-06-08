@@ -66,6 +66,7 @@ Encore
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     .addEntry('js/shared/codemirror', './assets/js/_shared/codemirror.js')
     .addEntry('js/shared/fancybox', './assets/js/_shared/fancybox.js')
+    .addEntry('js/shared/markdown', './assets/js/_shared/markdown.js')
 
     .addStyleEntry('css/shared/codemirror', './assets/scss/_shared/codemirror.scss')
     .addStyleEntry('css/shared/markdown', './assets/scss/_shared/markdown.scss')

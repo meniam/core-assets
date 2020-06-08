@@ -11,6 +11,7 @@ require('codemirror/mode/javascript/javascript');
 require('codemirror/mode/htmlmixed/htmlmixed');
 require('codemirror/mode/yaml-frontmatter/yaml-frontmatter');
 require('codemirror/mode/yaml/yaml');
+require('codemirror/mode/php/php');
 require('codemirror/mode/css/css');
 require('codemirror/mode/sql/sql');
 require('codemirror/addon/dialog/dialog');
