@@ -1,6 +1,6 @@
 {
   "name": "@evirma/core-assets",
-  "version": "1.0.29",
+  "version": "2.0.2",
   "description": "Core assets",
   "author": "Eugene Myazin",
   "homepage": "http://github.com/meniam/core-assets",
@@ -66,7 +66,7 @@
     "node-sass": "^4.14.0",
     "postcss-loader": "^4.1.0",
     "postcss-unprefix": "^2.1.4",
-    "sass-loader": "^10.0.0"
+    "sass-loader": "^8.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
