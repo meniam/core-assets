@@ -45,9 +45,8 @@ Encore
     })
     .copyFiles([
         {
-            from: './assets/fonts',
-            to: 'fonts/[path][name].[ext]',
-            context: './assets'
+            from: './assets/fonts/',
+            to: './fonts/[path][name].[ext]'
         }
     ])
     .enableSassLoader(function (sassOptions) {
