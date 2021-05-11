@@ -2,12 +2,11 @@ const Encore = require('@symfony/webpack-encore');
 
 const path = require('path');
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 Encore
-    .configureRuntimeEnvironment('dev')
+    .configureRuntimeEnvironment('development')
     .disableSingleRuntimeChunk()
     .setOutputPath('dist/static/')
     .setPublicPath('/static/')
@@ -15,6 +14,11 @@ Encore
     .enableBuildNotifications()
     .enableSourceMaps(false) //!Encore.isProduction()
     .enableVersioning(false)
+    .enablePostCssLoader((options) => {
+        options.postcssOptions = {
+            config: path.join(__dirname, './postcss.config.js')
+        };
+    })
     .autoProvideVariables({
         '$': 'jquery',
         jQuery: 'jquery',
@@ -30,34 +34,47 @@ Encore
     .configureFilenames({
         js: '[name].js',
         css: '[name].css',
-        images: 'img/[name].[ext]',
-        fonts: 'fonts/[name].[ext]'
+        assets: 'assets/[name].[ext]'
     })
-    .enableSassLoader(function(sassOptions) {}, {
+    .configureImageRule({
+        type: "assets"
+    })
+    .configureFontRule({
+        type: "assets"
+    })
+    .copyFiles([
+        {
+            from: './assets/fonts',
+            to: 'fonts/[path][name].[ext]',
+            context: './assets'
+        }
+    ])
+    .enableSassLoader(function (sassOptions) {
+    }, {
         resolveUrlLoader: false
     })
-    .addPlugin(
-        new CopyWebpackPlugin(
-            [
-                { from: 'assets/fonts', to: 'fonts' }
-            ]
-        )
-    )
-    .addPlugin(new OptimizeCssAssetsPlugin({
-            assetNameRegExp: /\.css$/i,
-            cssProcessor: require('cssnano'),
-            cssProcessorPluginOptions: {
-                preset: ['default', { discardComments: { removeAll: true } }],
+    .addPlugin(new CssMinimizerPlugin({
+            test: /\.css$/i,
+            parallel: true,
+            minimizerOptions: {
+                preset: [
+                    'default',
+                    {
+                        // @see https://cssnano.co/docs/optimisations/
+                        svgo: true,
+                        zindex: true,
+                        colormin: true,
+                        discardComments: { removeAll: true },
+                    },
+                ]
             },
-            canPrint: true
         })
     )
     .addPlugin(new TerserPlugin({
             test: /\.js(\?.*)?$/i,
             parallel: true,
             extractComments: false,
-            sourceMap: false,
-            terserOptions: { output: {comments: false} }
+            terserOptions: {output: {comments: false}}
         })
     )
 

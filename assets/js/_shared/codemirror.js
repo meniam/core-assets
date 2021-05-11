@@ -1,10 +1,13 @@
-import CodeMirror from 'codemirror';
+let CodeMirror = require('codemirror');
+//import CodeMirror from 'codemirror';
 window['CodeMirror'] = CodeMirror;
 
-import jsonlint from './jsonlint';
+//import jsonlint from './jsonlint';
+let jsonlint = require('codemirror/mode/javascript/javascript');
 window.jsonlint = jsonlint;
 
-import jsyaml from 'js-yaml/dist/js-yaml.min';
+let jsyaml = require('codemirror/mode/javascript/javascript');
+//import jsyaml from 'js-yaml/dist/js-yaml.min';
 window.jsyaml = jsyaml;
 
 require('codemirror/mode/javascript/javascript');
