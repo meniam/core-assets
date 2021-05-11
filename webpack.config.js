@@ -11,6 +11,7 @@ Encore
     .setOutputPath('dist/static/')
     .setPublicPath('/static/')
     .cleanupOutputBeforeBuild()
+    .configureFriendlyErrorsPlugin()
     .enableBuildNotifications()
     .enableSourceMaps(false) //!Encore.isProduction()
     .enableVersioning(false)
