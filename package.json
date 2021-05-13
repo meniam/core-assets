@@ -1,6 +1,6 @@
 {
   "name": "@evirma/core-assets",
-  "version": "3.0.1",
+  "version": "3.0.4",
   "description": "Core assets",
   "author": "Eugene Myazin",
   "homepage": "https://github.com/meniam/core-assets",
@@ -55,6 +55,7 @@
     "node-sass": "^4.14.0",
     "pace": "0.0.4",
     "popper.js": "^1.16.1",
+    "postcss": "^8.2.15",
     "postcss-loader": "^5.2.0",
     "postcss-unprefix": "^2.1.4",
     "resolve-url-loader": "^4.0.0",

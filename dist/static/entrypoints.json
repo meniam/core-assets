@@ -2,42 +2,42 @@
   "entrypoints": {
     "js/shared/codemirror": {
       "js": [
-        "/static/js/shared/codemirror.js"
+        "/js/shared/codemirror.js"
       ]
     },
     "js/shared/fancybox": {
       "js": [
-        "/static/js/shared/fancybox.js"
+        "/js/shared/fancybox.js"
       ]
     },
     "js/shared/markdown": {
       "js": [
-        "/static/js/shared/markdown.js"
+        "/js/shared/markdown.js"
       ]
     },
     "css/shared/codemirror": {
       "css": [
-        "/static/css/shared/codemirror.css"
+        "/css/shared/codemirror.css"
       ]
     },
     "css/shared/markdown": {
       "css": [
-        "/static/css/shared/markdown.css"
+        "/css/shared/markdown.css"
       ]
     },
     "css/shared/select2": {
       "css": [
-        "/static/css/shared/select2.css"
+        "/css/shared/select2.css"
       ]
     },
     "css/shared/selectize": {
       "css": [
-        "/static/css/shared/selectize.css"
+        "/css/shared/selectize.css"
       ]
     },
     "css/shared/fancybox": {
       "css": [
-        "/static/css/shared/fancybox.css"
+        "/css/shared/fancybox.css"
       ]
     }
   }

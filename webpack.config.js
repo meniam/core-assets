@@ -2,24 +2,22 @@ const Encore = require('@symfony/webpack-encore');
 
 const path = require('path');
 
-const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserOptions  = require('./config/webpack/helpers/terser.options');
+const CssMinimizerOptions = require('./config/webpack/helpers/css-minimizer.options');
 
 Encore
-    .configureRuntimeEnvironment('development')
     .disableSingleRuntimeChunk()
     .setOutputPath('dist/static/')
-    .setPublicPath('/static/')
+    .setPublicPath('/')
     .cleanupOutputBeforeBuild()
-    .configureFriendlyErrorsPlugin()
     .enableBuildNotifications()
-    .enableSourceMaps(false) //!Encore.isProduction()
+    .enablePostCssLoader((opts) => {opts.postcssOptions = {config: path.join(__dirname, './postcss.config.js')}})
+    .configureCssLoader(()=>({url: false}))
+    .enableSassLoader(() => {},{resolveUrlLoader: false})
+    .enableSassLoader()
+    .configureBabel(function (config) {})
+    .enableSourceMaps(false)
     .enableVersioning(false)
-    .enablePostCssLoader((options) => {
-        options.postcssOptions = {
-            config: path.join(__dirname, './postcss.config.js')
-        };
-    })
     .autoProvideVariables({
         '$': 'jquery',
         jQuery: 'jquery',
@@ -27,56 +25,18 @@ Encore
         'window.$': 'jquery',
         Popper: 'popper.js'
     })
-    .addRule({
-        parser: {
-            amd: false,
-        },
-    })
     .configureFilenames({
         js: '[name].js',
         css: '[name].css',
-        assets: 'assets/[name].[ext]'
+        assets: 'assets/[name][ext]'
     })
-    .configureImageRule({
-        type: "assets"
-    })
-    .configureFontRule({
-        type: "assets"
-    })
-    .copyFiles([
-        {
-            from: './assets/fonts/',
-            to: './fonts/[path][name].[ext]'
-        }
-    ])
-    .enableSassLoader(function (sassOptions) {
-    }, {
-        resolveUrlLoader: false
-    })
-    .addPlugin(new CssMinimizerPlugin({
-            test: /\.css$/i,
-            parallel: true,
-            minimizerOptions: {
-                preset: [
-                    'default',
-                    {
-                        // @see https://cssnano.co/docs/optimisations/
-                        svgo: true,
-                        zindex: true,
-                        colormin: true,
-                        discardComments: { removeAll: true },
-                    },
-                ]
-            },
-        })
-    )
-    .addPlugin(new TerserPlugin({
-            test: /\.js(\?.*)?$/i,
-            parallel: true,
-            extractComments: false,
-            terserOptions: {output: {comments: false}}
-        })
-    )
+    .configureImageRule({enabled: false})
+    .configureFontRule({enabled: false})
+    .configureTerserPlugin(TerserOptions)
+    .configureCssMinimizerPlugin(CssMinimizerOptions)
+    // .when(true, Encore => Encore.copyFiles([
+    //     {from: './assets/backend/images/',  to: 'images/[path][name].[ext]'},
+    // ]))
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     // Shared
@@ -92,10 +52,7 @@ Encore
     .addStyleEntry('css/shared/fancybox', './assets/scss/_shared/fancybox.scss')
 ;
 
-var config = Encore.getWebpackConfig();
-config.resolve.alias = {
-    '/assets': path.resolve(__dirname, 'assets/'),
-    'assets': path.resolve(__dirname, 'assets/'),
-    '../webfonts/': path.resolve(__dirname, 'public/static/fonts/'),
-};
+const config = Encore.getWebpackConfig();
+config.resolve.alias = require('./config/webpack/helpers/resolve.alias');
+
 module.exports = config;
