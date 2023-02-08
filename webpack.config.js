@@ -34,9 +34,9 @@ Encore
     .configureFontRule({enabled: false})
     .configureTerserPlugin(TerserOptions)
     .configureCssMinimizerPlugin(CssMinimizerOptions)
-    // .when(true, Encore => Encore.copyFiles([
-    //     {from: './assets/backend/images/',  to: 'images/[path][name].[ext]'},
-    // ]))
+    .when(true, Encore => Encore.copyFiles([
+        {from: './assets/fonts/',  to: 'fonts/[path][name].[ext]'},
+    ]))
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     // Shared
