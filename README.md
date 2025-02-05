@@ -10,5 +10,6 @@ npm i
 Опубликовать
 
 ```
+npm addUser
 npm publish --access public .
 ```
